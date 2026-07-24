@@ -1,0 +1,489 @@
+[
+  {
+    "url": "https://kader9.framer.website/",
+    "score": 82,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (119 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "Multiple <h1> tags found (3). Best practice is to have only one."
+      },
+      {
+        "type": "warning",
+        "message": "23 image(s) missing alt text"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Denteva – Dental Cleaning & Dentist Framer Template",
+      "description": "A modern Framer template for dental clinics, teeth cleaning services, cosmetic dentistry, and oral healthcare websites.",
+      "canonical": "https://bulky-mermaid-402238.framer.app/",
+      "ogImage": "https://framerusercontent.com/images/nJeLqcDU9zA9CiG15RtYerol0.png"
+    }
+  },
+  {
+    "url": "https://kader9.framer.website/service/general-dentistry",
+    "score": 82,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Title too long (71 chars). May be truncated in search results."
+      },
+      {
+        "type": "warning",
+        "message": "Meta description too short (119 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "11 image(s) missing alt text"
+      },
+      {
+        "type": "info",
+        "message": "No canonical URL specified"
+      }
+    ],
+    "passed": [
+      "Single H1 heading present",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "General Dentistry - Denteva – Dental Cleaning & Dentist Framer Template",
+      "description": "A modern Framer template for dental clinics, teeth cleaning services, cosmetic dentistry, and oral healthcare websites.",
+      "canonical": null,
+      "ogImage": "https://framerusercontent.com/images/nJeLqcDU9zA9CiG15RtYerol0.png"
+    }
+  },
+  {
+    "url": "https://kader9.framer.website/service/pediatric-dentistry",
+    "score": 82,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Title too long (73 chars). May be truncated in search results."
+      },
+      {
+        "type": "warning",
+        "message": "Meta description too short (119 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "11 image(s) missing alt text"
+      },
+      {
+        "type": "info",
+        "message": "No canonical URL specified"
+      }
+    ],
+    "passed": [
+      "Single H1 heading present",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Pediatric Dentistry - Denteva – Dental Cleaning & Dentist Framer Template",
+      "description": "A modern Framer template for dental clinics, teeth cleaning services, cosmetic dentistry, and oral healthcare websites.",
+      "canonical": null,
+      "ogImage": "https://framerusercontent.com/images/nJeLqcDU9zA9CiG15RtYerol0.png"
+    }
+  },
+  {
+    "url": "https://kader9.framer.website/about",
+    "score": 85,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (119 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "7 image(s) missing alt text"
+      },
+      {
+        "type": "info",
+        "message": "No canonical URL specified"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Single H1 heading present",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Denteva – Dental Cleaning & Dentist Framer Template",
+      "description": "A modern Framer template for dental clinics, teeth cleaning services, cosmetic dentistry, and oral healthcare websites.",
+      "canonical": null,
+      "ogImage": "https://framerusercontent.com/images/nJeLqcDU9zA9CiG15RtYerol0.png"
+    }
+  },
+  {
+    "url": "https://kader9.framer.website/blog",
+    "score": 85,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (119 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "9 image(s) missing alt text"
+      },
+      {
+        "type": "info",
+        "message": "No canonical URL specified"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Single H1 heading present",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Denteva – Dental Cleaning & Dentist Framer Template",
+      "description": "A modern Framer template for dental clinics, teeth cleaning services, cosmetic dentistry, and oral healthcare websites.",
+      "canonical": null,
+      "ogImage": "https://framerusercontent.com/images/nJeLqcDU9zA9CiG15RtYerol0.png"
+    }
+  },
+  {
+    "url": "https://kader9.framer.website/reviews",
+    "score": 85,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (119 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "12 image(s) missing alt text"
+      },
+      {
+        "type": "info",
+        "message": "No canonical URL specified"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Single H1 heading present",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Denteva – Dental Cleaning & Dentist Framer Template",
+      "description": "A modern Framer template for dental clinics, teeth cleaning services, cosmetic dentistry, and oral healthcare websites.",
+      "canonical": null,
+      "ogImage": "https://framerusercontent.com/images/nJeLqcDU9zA9CiG15RtYerol0.png"
+    }
+  },
+  {
+    "url": "https://kader9.framer.website/service",
+    "score": 85,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (119 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "8 image(s) missing alt text"
+      },
+      {
+        "type": "info",
+        "message": "No canonical URL specified"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Single H1 heading present",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Denteva – Dental Cleaning & Dentist Framer Template",
+      "description": "A modern Framer template for dental clinics, teeth cleaning services, cosmetic dentistry, and oral healthcare websites.",
+      "canonical": null,
+      "ogImage": "https://framerusercontent.com/images/nJeLqcDU9zA9CiG15RtYerol0.png"
+    }
+  },
+  {
+    "url": "https://kader9.framer.website/service/dental-implants",
+    "score": 85,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (119 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "11 image(s) missing alt text"
+      },
+      {
+        "type": "info",
+        "message": "No canonical URL specified"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Single H1 heading present",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Dental Implants - Denteva – Dental Cleaning & Dentist Framer Template",
+      "description": "A modern Framer template for dental clinics, teeth cleaning services, cosmetic dentistry, and oral healthcare websites.",
+      "canonical": null,
+      "ogImage": "https://framerusercontent.com/images/nJeLqcDU9zA9CiG15RtYerol0.png"
+    }
+  },
+  {
+    "url": "https://kader9.framer.website/service/orthodontics",
+    "score": 85,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (119 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "11 image(s) missing alt text"
+      },
+      {
+        "type": "info",
+        "message": "No canonical URL specified"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Single H1 heading present",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Orthodontics - Denteva – Dental Cleaning & Dentist Framer Template",
+      "description": "A modern Framer template for dental clinics, teeth cleaning services, cosmetic dentistry, and oral healthcare websites.",
+      "canonical": null,
+      "ogImage": "https://framerusercontent.com/images/nJeLqcDU9zA9CiG15RtYerol0.png"
+    }
+  },
+  {
+    "url": "https://kader9.framer.website/service/teeth-whitening",
+    "score": 85,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (119 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "11 image(s) missing alt text"
+      },
+      {
+        "type": "info",
+        "message": "No canonical URL specified"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Single H1 heading present",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Teeth Whitening - Denteva – Dental Cleaning & Dentist Framer Template",
+      "description": "A modern Framer template for dental clinics, teeth cleaning services, cosmetic dentistry, and oral healthcare websites.",
+      "canonical": null,
+      "ogImage": "https://framerusercontent.com/images/nJeLqcDU9zA9CiG15RtYerol0.png"
+    }
+  },
+  {
+    "url": "https://kader9.framer.website/team",
+    "score": 85,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (119 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "warning",
+        "message": "8 image(s) missing alt text"
+      },
+      {
+        "type": "info",
+        "message": "No canonical URL specified"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Single H1 heading present",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Denteva – Dental Cleaning & Dentist Framer Template",
+      "description": "A modern Framer template for dental clinics, teeth cleaning services, cosmetic dentistry, and oral healthcare websites.",
+      "canonical": null,
+      "ogImage": "https://framerusercontent.com/images/nJeLqcDU9zA9CiG15RtYerol0.png"
+    }
+  },
+  {
+    "url": "https://kader9.framer.website/404",
+    "score": 87,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (119 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "error",
+        "message": "Missing <h1> heading"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "All images have alt attributes",
+      "Canonical URL is set",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Denteva – Dental Cleaning & Dentist Framer Template",
+      "description": "A modern Framer template for dental clinics, teeth cleaning services, cosmetic dentistry, and oral healthcare websites.",
+      "canonical": "https://bulky-mermaid-402238.framer.app/404",
+      "ogImage": "https://framerusercontent.com/images/nJeLqcDU9zA9CiG15RtYerol0.png"
+    }
+  },
+  {
+    "url": "https://kader9.framer.website/appointment",
+    "score": 95,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (119 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "info",
+        "message": "No canonical URL specified"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Single H1 heading present",
+      "All images have alt attributes",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Denteva – Dental Cleaning & Dentist Framer Template",
+      "description": "A modern Framer template for dental clinics, teeth cleaning services, cosmetic dentistry, and oral healthcare websites.",
+      "canonical": null,
+      "ogImage": "https://framerusercontent.com/images/nJeLqcDU9zA9CiG15RtYerol0.png"
+    }
+  },
+  {
+    "url": "https://kader9.framer.website/contact",
+    "score": 95,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (119 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "info",
+        "message": "No canonical URL specified"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Single H1 heading present",
+      "All images have alt attributes",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Denteva – Dental Cleaning & Dentist Framer Template",
+      "description": "A modern Framer template for dental clinics, teeth cleaning services, cosmetic dentistry, and oral healthcare websites.",
+      "canonical": null,
+      "ogImage": "https://framerusercontent.com/images/nJeLqcDU9zA9CiG15RtYerol0.png"
+    }
+  },
+  {
+    "url": "https://kader9.framer.website/legal/privacy-policy",
+    "score": 95,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (119 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "info",
+        "message": "No canonical URL specified"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Single H1 heading present",
+      "All images have alt attributes",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Privacy Policy - My Framer Site",
+      "description": "A modern Framer template for dental clinics, teeth cleaning services, cosmetic dentistry, and oral healthcare websites.",
+      "canonical": null,
+      "ogImage": "https://framerusercontent.com/images/nJeLqcDU9zA9CiG15RtYerol0.png"
+    }
+  },
+  {
+    "url": "https://kader9.framer.website/legal/terms-conditions",
+    "score": 95,
+    "issues": [
+      {
+        "type": "warning",
+        "message": "Meta description too short (119 chars). Aim for 150-160 characters."
+      },
+      {
+        "type": "info",
+        "message": "No canonical URL specified"
+      }
+    ],
+    "passed": [
+      "Title tag is properly configured",
+      "Single H1 heading present",
+      "All images have alt attributes",
+      "Open Graph meta tags present",
+      "Viewport meta tag present",
+      "Language attribute set"
+    ],
+    "meta": {
+      "title": "Terms & Conditions - My Framer Site",
+      "description": "A modern Framer template for dental clinics, teeth cleaning services, cosmetic dentistry, and oral healthcare websites.",
+      "canonical": null,
+      "ogImage": "https://framerusercontent.com/images/nJeLqcDU9zA9CiG15RtYerol0.png"
+    }
+  }
+]
