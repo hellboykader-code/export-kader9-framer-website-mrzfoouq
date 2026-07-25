@@ -102,9 +102,12 @@
     // 4) badge « Made in Framer »
     document.querySelectorAll('a[href*="framer.com"]').forEach(function(a){ a.style.display='none'; });
   }
-  function boot(){ apply(); [200,500,1000,1800,3000,5000].forEach(function(t){setTimeout(apply,t);});
-    var n=0,iv=setInterval(function(){apply(); if(++n>15)clearInterval(iv);},600);
-    try{ new MutationObserver(apply).observe(document.body,{childList:true,subtree:true}); }catch(e){}
+  var _t=null;
+  function _schedule(){ if(_t) return; _t=setTimeout(function(){ _t=null; apply(); }, 180); }
+  function boot(){ apply(); [300,800,1600,3000,5000].forEach(function(ms){setTimeout(apply,ms);});
+    var obs=new MutationObserver(_schedule);
+    try{ obs.observe(document.body,{childList:true,subtree:true}); }catch(e){}
+    setTimeout(function(){ try{obs.disconnect();}catch(e){} }, 14000);
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot); else boot();
 })();
