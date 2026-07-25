@@ -77,8 +77,18 @@
     });
     document.querySelectorAll('[data-framer-name="Logo"] source,source[srcset*="wY3EHmZ"]').forEach(function(s){ s.setAttribute('srcset',LOGO); });
   }
+  // badges de confiance américains (Chamber of Commerce, Top Doctor, Neighborhood Favorite) -> retirer
+  function killBadges(){
+    ['OxKMPH3','SsS8ExF5','T9zGWjCk'].forEach(function(k){
+      document.querySelectorAll('img[src*="'+k+'"]').forEach(function(im){
+        var fig=im.closest('figure[data-framer-name="Image wrap"]')||im.closest('figure')||im.parentElement;
+        if(fig){ fig.style.display='none'; }
+      });
+    });
+  }
   function apply(){
     forceLogo();
+    killBadges();
     // 1) sections/cartes de témoignage : nom = « Review/… », ou le nom EST la citation
     document.querySelectorAll('[data-framer-name]').forEach(function(el){
       var n=el.getAttribute('data-framer-name')||'';
