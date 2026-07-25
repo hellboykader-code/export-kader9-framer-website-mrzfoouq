@@ -69,7 +69,16 @@
     if(isHero(s)){ hide(el); return; }
     hide(s); hide(el);
   }
+  var LOGO="/export-kader9-framer-website-mrzfoouq/assets/framer/images/wY3EHmZVW2XGTOvsKjwf6dsdxN8.svg";
+  function forceLogo(){
+    document.querySelectorAll('[data-framer-name="Logo"] img,[data-framer-name*="Logo"] img,img[src*="wY3EHmZ"]').forEach(function(img){
+      if(img.getAttribute('srcset')) img.removeAttribute('srcset');
+      if((img.getAttribute('src')||'')!==LOGO) img.setAttribute('src',LOGO);
+    });
+    document.querySelectorAll('[data-framer-name="Logo"] source,source[srcset*="wY3EHmZ"]').forEach(function(s){ s.setAttribute('srcset',LOGO); });
+  }
   function apply(){
+    forceLogo();
     // 1) sections/cartes de témoignage : nom = « Review/… », ou le nom EST la citation
     document.querySelectorAll('[data-framer-name]').forEach(function(el){
       var n=el.getAttribute('data-framer-name')||'';
