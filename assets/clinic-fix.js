@@ -38,6 +38,39 @@
     "About":"À propos","AboutUs":"À propos","Home":"Accueil","Team":"Équipe","Search":"Rechercher",
     "DentalTeam":"Équipe dentaire","OurServices":"Nos soins","ContactUs":"Contact"
   };
+  // Textes CMS des soins rendus AVEC espaces (pas SplitText) -> match exact du textContent
+  var PLAIN={
+    "Dental Veneers":"Facettes dentaires","Pediatric Dentistry":"Dentisterie pédiatrique",
+    "Orthodontics":"Orthodontie","Emergency Dental Care":"Soins dentaires d'urgence",
+    "General Dentistry":"Dentisterie générale","Cosmetic Dentistry":"Dentisterie esthétique",
+    "Teeth Whitening":"Blanchiment dentaire","Dental Implants":"Implants dentaires",
+    "Root Canal Therapy":"Traitement de racine","Teeth Cleaning":"Détartrage",
+    "Cavity Fillings":"Obturations des caries","Gum Treatment":"Traitement des gencives",
+    "Safe and effective treatments designed to brighten stained or discolored teeth.":
+      "Des traitements sûrs et efficaces pour éclaircir les dents tachées ou décolorées.",
+    "Long-lasting tooth replacement solutions that restore function and appearance.":
+      "Des solutions durables de remplacement dentaire qui restaurent la fonction et l'esthétique.",
+    "Braces and clear aligners for correcting misaligned teeth and improving bite structure.":
+      "Bagues et gouttières transparentes pour corriger les dents mal alignées et améliorer l'occlusion.",
+    "Complete dental care for the whole family, from routine checkups to advanced treatments.":
+      "Des soins dentaires complets pour toute la famille, du bilan de routine aux traitements avancés.",
+    "Gentle, specialized dental care tailored to children of all ages.":
+      "Des soins dentaires doux et spécialisés, adaptés aux enfants de tous âges.",
+    "Immediate care for dental emergencies to relieve pain and prevent complications.":
+      "Une prise en charge immédiate des urgences dentaires pour soulager la douleur et éviter les complications."
+  };
+  function fixPlain(){
+    document.querySelectorAll('h1,h2,h3,h4,h5,p,span,a,li,div').forEach(function(el){
+      if(el.children.length>0) return;
+      if(el.getAttribute('data-frplain')==='1') return;
+      var t=(el.textContent||'').replace(/\s+/g,' ').trim();
+      var fr=PLAIN[t]; if(!fr) return;
+      var w=function(n){for(var i=0;i<n.childNodes.length;i++){var c=n.childNodes[i];
+        if(c.nodeType===3&&c.nodeValue&&c.nodeValue.trim()){c.nodeValue=fr;return true;}}return false;};
+      if(!w(el)) el.textContent=fr;
+      el.setAttribute('data-frplain','1');
+    });
+  }
   function fixRolling(){
     document.querySelectorAll('p,h1,h2,h3,h4').forEach(function(p){
       if(p.getAttribute('data-frfixed')==='1') return;
@@ -104,6 +137,7 @@
       if(cur.replace(/\s+/g,'')!==n.replace(/\s+/g,'') && ENW.test(cur)){ el.textContent=n; }
     });
     fixRolling();
+    fixPlain();
     // 3) liens Blog / Legal / Reviews (nav + footer)
     document.querySelectorAll('a[href]').forEach(function(a){
       var h=a.getAttribute('href')||'';
@@ -141,7 +175,7 @@
   function destFor(el){
     var t=btnText(el); if(!t) return null;
     if(t.indexOf('@')>=0) return null;                 // e-mail -> laisser
-    if(starts(t,'prendre rendez-vous')||starts(t,'demander un rendez-vous')||t==='rendez-vous'||starts(t,'réserver')||starts(t,'reserver')||starts(t,'confirmer le rendez-vous')) return BASE+'/appointment/';
+    if(t.indexOf('prendre rendez-vous')>=0||starts(t,'demander un rendez-vous')||t==='rendez-vous'||starts(t,'réserver')||starts(t,'reserver')||starts(t,'confirmer le rendez-vous')) return BASE+'/appointment/';
     if(starts(t,'appeler')||/^0[0-9]([ .]?[0-9]{2}){4}$/.test(t)) return TEL;
     if(t==='soins'||t==='nos soins'||starts(t,'voir tous nos soins')||starts(t,'nos services')) return BASE+'/service/';
     if(t==='à propos'||t==='a propos') return BASE+'/about/';
@@ -149,7 +183,7 @@
     if(t==='équipe'||t==='equipe'||starts(t,'notre équipe')||starts(t,'rencontrez nos dentistes')||starts(t,'voir toute')) return BASE+'/team/';
     if(t==='conseils'||t==='blog'||t==='journal') return BASE+'/blog/';
     if(t==='avis'||starts(t,'témoignages')||starts(t,'temoignages')) return BASE+'/reviews/';
-    if(t==='accueil') return BASE+'/';
+    if(t==='accueil'||t==='novéo'||t==='noveo') return BASE+'/';
     if(/dentisterie|implant|orthodont|blanchiment|détartrage|detartrage|couronne|facette|prothès|prothes|parodont|endodont/.test(t)) return BASE+'/service/';
     if(starts(t,'en savoir plus')||starts(t,'lire la suite')||starts(t,'read more')||starts(t,'découvrir')||starts(t,'decouvrir')) return BASE+'/service/';
     return null;
@@ -164,11 +198,17 @@
     document.querySelectorAll('a,button,[role="link"],[role="button"]').forEach(function(el){
       if(el.closest('#nv-ovl-layer')||el.closest('form')) return;
       var r=el.getBoundingClientRect(); if(r.width<4||r.height<4) return;
-      var d=destFor(el); if(d) out.push({el:el,dest:d});
+      var d=destFor(el);
+      // logo « Novéo » en haut à gauche (image, sans texte) -> accueil
+      if(!d && r.top<110 && r.left<340 && r.width<270 && el.querySelector('img,svg')) d=BASE+'/';
+      if(d) out.push({el:el,dest:d});
     });
     return out;
   }
   function sync(){ ensureLayer(); var tg=targets();
+    // grands éléments (cartes) d'abord -> petits boutons créés en dernier = AU-DESSUS
+    tg.sort(function(a,b){ var ra=a.el.getBoundingClientRect(),rb=b.el.getBoundingClientRect();
+      return (rb.width*rb.height)-(ra.width*ra.height); });
     while(OVL.length<tg.length){ var d=document.createElement('div'); d.className='nv-ovl';
       d.style.cssText='position:fixed;display:block;background:transparent;cursor:pointer;pointer-events:auto;';
       d.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation();
