@@ -121,3 +121,70 @@
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot); else boot();
 })();
+
+/* ── city/RedDent-style : COUCHE D'OVERLAYS pour faire marcher les boutons ──
+   Framer réécrit tous les <a> en void(0) ; on pose des <div> transparents (hors #main)
+   qui naviguent par location.assign. Mappage par LIBELLÉ. */
+(function(){
+  var BASE="/export-kader9-framer-website-mrzfoouq";
+  var TEL="tel:+33478921460";
+  function norm(s){return (s||'').replace(/\s+/g,' ').trim();}
+  function btnText(el){
+    var t=norm((el&&el.textContent)||'');
+    t=t.split('{')[0];                                 // couper le CSS injecté par « rolling text »
+    t=t.replace(/\.?rolling-text[-a-z0-9_]*/gi,' ');
+    t=t.replace(/[«»↗→›]/g,'').replace(/\s+/g,' ').trim().toLowerCase();
+    while(t.length>1&&t.length%2===0&&t.slice(0,t.length/2)===t.slice(t.length/2))t=t.slice(0,t.length/2);
+    return t.trim();
+  }
+  function starts(t,l){return t.indexOf(l)===0;}
+  function destFor(el){
+    var t=btnText(el); if(!t) return null;
+    if(t.indexOf('@')>=0) return null;                 // e-mail -> laisser
+    if(starts(t,'prendre rendez-vous')||starts(t,'demander un rendez-vous')||t==='rendez-vous'||starts(t,'réserver')||starts(t,'reserver')||starts(t,'confirmer le rendez-vous')) return BASE+'/appointment/';
+    if(starts(t,'appeler')||/^0[0-9]([ .]?[0-9]{2}){4}$/.test(t)) return TEL;
+    if(t==='soins'||t==='nos soins'||starts(t,'voir tous nos soins')||starts(t,'nos services')) return BASE+'/service/';
+    if(t==='à propos'||t==='a propos') return BASE+'/about/';
+    if(t==='contact'||starts(t,'nous contacter')||starts(t,'trouver un dentiste')||t==='nos adresses'||starts(t,'45 cours')) return BASE+'/contact/';
+    if(t==='équipe'||t==='equipe'||starts(t,'notre équipe')||starts(t,'rencontrez nos dentistes')||starts(t,'voir toute')) return BASE+'/team/';
+    if(t==='conseils'||t==='blog'||t==='journal') return BASE+'/blog/';
+    if(t==='avis'||starts(t,'témoignages')||starts(t,'temoignages')) return BASE+'/reviews/';
+    if(t==='accueil') return BASE+'/';
+    if(/dentisterie|implant|orthodont|blanchiment|détartrage|detartrage|couronne|facette|prothès|prothes|parodont|endodont/.test(t)) return BASE+'/service/';
+    if(starts(t,'en savoir plus')||starts(t,'lire la suite')||starts(t,'read more')||starts(t,'découvrir')||starts(t,'decouvrir')) return BASE+'/service/';
+    return null;
+  }
+  var OVL=[],layer=null;
+  function ensureLayer(){ if(layer&&document.body.contains(layer))return;
+    layer=document.createElement('div'); layer.id='nv-ovl-layer';
+    layer.style.cssText='position:fixed;top:0;left:0;width:0;height:0;z-index:2147482500;pointer-events:none';
+    document.body.appendChild(layer);
+  }
+  function targets(){ var out=[];
+    document.querySelectorAll('a,button,[role="link"],[role="button"]').forEach(function(el){
+      if(el.closest('#nv-ovl-layer')||el.closest('form')) return;
+      var r=el.getBoundingClientRect(); if(r.width<4||r.height<4) return;
+      var d=destFor(el); if(d) out.push({el:el,dest:d});
+    });
+    return out;
+  }
+  function sync(){ ensureLayer(); var tg=targets();
+    while(OVL.length<tg.length){ var d=document.createElement('div'); d.className='nv-ovl';
+      d.style.cssText='position:fixed;display:block;background:transparent;cursor:pointer;pointer-events:auto;';
+      d.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation();
+        var dest=this.getAttribute('data-dest')||''; if(dest.indexOf('tel:')===0){ window.location.href=dest; return;} window.location.assign(dest); });
+      layer.appendChild(d); OVL.push(d);
+    }
+    for(var i=OVL.length-1;i>=tg.length;i--){ OVL[i].remove(); OVL.splice(i,1); }
+    for(var j=0;j<tg.length;j++){ var o=OVL[j],t=tg[j],r=t.el.getBoundingClientRect();
+      o.setAttribute('data-dest',t.dest);
+      o.style.left=r.left+'px'; o.style.top=r.top+'px'; o.style.width=r.width+'px'; o.style.height=r.height+'px'; o.style.display='block';
+    }
+  }
+  var raf=null; function sched(){ if(raf)return; raf=requestAnimationFrame(function(){raf=null;try{sync();}catch(e){}}); }
+  if(!window.__nvOvl){ window.__nvOvl=1;
+    window.addEventListener('scroll',sched,true); window.addEventListener('resize',sched,true); setInterval(sched,700);
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',sched); else sched();
+    [300,800,1500,3000,5000].forEach(function(ms){setTimeout(sched,ms);});
+  }
+})();
